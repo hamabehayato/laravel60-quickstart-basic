@@ -25,17 +25,6 @@ Route::get('/', function () {
  * 新タスク追加
  */
 Route::post('/task', function (Request $request) {
-    //
-});
-
-/**
- * タスク削除
- */
-Route::delete('/task/{task}', function (Task $task) {
-    //
-});
-
-Route::post('/task', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
     ]);
@@ -47,4 +36,10 @@ Route::post('/task', function (Request $request) {
     }
 
     // タスク作成処理…
+});
+/**
+ * タスク削除
+ */
+Route::delete('/task/{task}', function (Task $task) {
+    //
 });
